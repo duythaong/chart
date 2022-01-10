@@ -6,6 +6,10 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - v2
+  pull_request:
+    branches:
+      - v2
+  
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -15,15 +19,33 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - run: npm install -g yarn
-      - name: yarn install, build
+
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            **/node_modules
+            **/.eslintcache
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+            
+      - name: yarn install
         run: |
           yarn install
+
+      - name: yarn build
+        run: |
           yarn build
+
       - name: Archive Build
         uses: actions/upload-artifact@v2
         with:
@@ -35,3 +57,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_INFO_SWAP }}'
           channelId: live
           projectId: info-swap
+
