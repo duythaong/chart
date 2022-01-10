@@ -477,6 +477,7 @@ const getEthPrice = async () => {
 
   try {
     let oneDayBlock = await getBlockFromTimestamp(utcOneDayBack)
+    console.log('oneDayBlock', oneDayBlock)
     let result = await client.query({
       query: ETH_PRICE(),
       fetchPolicy: 'cache-first',
@@ -487,9 +488,10 @@ const getEthPrice = async () => {
     })
     const currentPrice = result?.data?.bundles[0]?.ethPrice
     const oneDayBackPrice = resultOneDay?.data?.bundles[0]?.ethPrice
+    console.log('oneDayBackPrice', oneDayBackPrice)
     priceChangeETH = getPercentChange(currentPrice, oneDayBackPrice)
     ethPrice = currentPrice
-    ethPriceOneDay = oneDayBackPrice
+    ethPriceOneDay = currentPrice
   } catch (e) {
     console.log(e)
   }
