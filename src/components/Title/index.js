@@ -49,10 +49,13 @@ export default function Title() {
         <RowFixed>
           <UniIcon id="link" onClick={() => history.push('/')}>
             <img width={'24px'} src={Logo} alt="logo" />
+            <span style={{ color: 'white', fontWeight: 'bold', fontSize: '16px', marginLeft: '8px', marginTop: '0px' }}>
+              BacoorSwap
+            </span>
           </UniIcon>
-          {!below1080 && (
+          {/* {!below1080 && (
             <img width={'84px'} style={{ marginLeft: '8px', marginTop: '0px' }} src={Wordmark} alt="logo" />
-          )}
+          )} */}
         </RowFixed>
         {below1080 && (
           <RowFixed style={{ alignItems: 'flex-end' }}>
