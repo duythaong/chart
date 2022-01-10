@@ -25,6 +25,9 @@ const UniIcon = styled(Link)`
   :hover {
     transform: rotate(-5deg);
   }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const Option = styled.div`
