@@ -53,7 +53,7 @@ export default function Title() {
           <UniIcon id="link" onClick={() => history.push('/')}>
             <img width={'24px'} src={Logo} alt="logo" />
             <span style={{ color: 'white', fontWeight: 'bold', fontSize: '16px', marginLeft: '8px', marginTop: '0px' }}>
-              BacoorSwap
+              KeyringSwap
             </span>
           </UniIcon>
           {/* {!below1080 && (
