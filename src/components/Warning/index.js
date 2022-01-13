@@ -9,7 +9,7 @@ import { AutoColumn } from '../Column'
 import { Hover } from '..'
 import Link from '../Link'
 import { useMedia } from 'react-use'
-import { getScanLink } from '../../utils/get\bLinkFromUrl'
+import { getScanLink } from '../../utils/getLinkFromUrl'
 
 const WarningWrapper = styled.div`
   border-radius: 20px;

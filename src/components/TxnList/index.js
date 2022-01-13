@@ -16,7 +16,7 @@ import DropdownSelect from '../DropdownSelect'
 import FormattedName from '../FormattedName'
 import { TYPE } from '../../Theme'
 import { updateNameData } from '../../utils/data'
-import { getScanLink } from '../../utils/get\bLinkFromUrl'
+import { getScanLink } from '../../utils/getLinkFromUrl'
 
 dayjs.extend(utc)
 

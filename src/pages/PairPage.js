@@ -38,7 +38,7 @@ import FormattedName from '../components/FormattedName'
 import { useListedTokens } from '../contexts/Application'
 import HoverText from '../components/HoverText'
 import { UNTRACKED_COPY, PAIR_BLACKLIST, BLOCKED_WARNINGS } from '../constants'
-import { getScanLink } from '../utils/get\bLinkFromUrl'
+import { getScanLink } from '../utils/getLinkFromUrl'
 
 const DashboardWrapper = styled.div`
   width: 100%;

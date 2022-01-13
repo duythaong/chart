@@ -17,3 +17,13 @@ export function getScanLink(): string {
       return 'https://mumbai.polygonscan.com/'
   }
 }
+
+export function getNetworkName(): string {
+  const cuurentDomain = window.location.host
+  switch (cuurentDomain) {
+    case 'info-swap.web.app':
+      return 'mumbai'
+    default:
+      return 'mumbai'
+  }
+}

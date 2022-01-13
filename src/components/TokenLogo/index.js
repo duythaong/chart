@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { isAddress } from '../../utils/index.js'
 import EthereumLogo from '../../assets/eth.png'
+import { getNetworkName } from '../../utils/getLinkFromUrl'
 
 const BAD_IMAGES = {}
 
@@ -71,7 +72,7 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
-  const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${isAddress(
+  const path = `https://raw.githubusercontent.com/thaobacoor/assets/master/blockchains/${getNetworkName()}/assets/${isAddress(
     address
   )}/logo.png`
 

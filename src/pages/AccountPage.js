@@ -21,7 +21,7 @@ import { BasicLink } from '../components/Link'
 import { useMedia } from 'react-use'
 import Search from '../components/Search'
 import { useSavedAccounts } from '../contexts/LocalStorage'
-import { getScanLink } from '../utils/get\bLinkFromUrl'
+import { getScanLink } from '../utils/getLinkFromUrl'
 
 const AccountWrapper = styled.div`
   background-color: rgba(255, 255, 255, 0.2);
